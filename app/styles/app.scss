@@ -11,3 +11,16 @@
     background: $white;
   }
 }
+
+.card-footer-item {
+  &.button {
+    height: auto;
+    border-radius: 0;
+  }
+}
+
+.form-input {
+  & + & {
+    margin-top: 0.5rem;
+  }
+}

@@ -1,9 +1,9 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  order: DS.attr('integer'),
+  order: DS.attr('number'),
   title: DS.attr('string'),
-  completeDate: DS.attr('date'),
+  completeDate: DS.attr('moment-utc'),
   help: DS.attr('boolean'),
   items: DS.hasMany('item')
 });
