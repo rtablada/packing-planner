@@ -1,12 +1,34 @@
-<div class="card">
-  {{#link-to "trips.new"}}
-    <div class="card-image">
-      <figure class="image is-4by3">
-        <img src="http://placehold.it/300x225?text=%2B" alt="">
-      </figure>
+<div class="columns is-multiline">
+  {{#each (sort-by "order" model) as |trip|}}
+    <div class="column is-3 is-grow">
+      <div class="card is-fullwidth">
+        {{#link-to "trips.index"}}
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="http://placehold.it/300x225?text={{trip.title}}" alt="">
+            </figure>
+          </div>
+          <div class="card-content">
+            <h2 class="title">{{trip.title}}</h2>
+          </div>
+        {{/link-to}}
+      </div>
     </div>
-    <div class="card-content">
-      <h2 class="title">Add New Trip</h2>
+
+  {{/each}}
+
+  <div class="column is-3 is-grow">
+    <div class="card is-fullwidth">
+      {{#link-to "trips.new"}}
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="http://placehold.it/300x225?text=%2B" alt="">
+          </figure>
+        </div>
+        <div class="card-content">
+          <h2 class="title">Add New Trip</h2>
+        </div>
+      {{/link-to}}
     </div>
-  {{/link-to}}
+  </div>
 </div>
