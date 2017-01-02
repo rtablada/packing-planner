@@ -2,6 +2,11 @@
 
 module.exports = function(environment) {
   var ENV = {
+    DS: {
+      host: 'http://packing-api.dev',
+      namespace: 'api',
+    },
+
     modulePrefix: 'packing-planner',
     environment: environment,
     rootURL: '/',
