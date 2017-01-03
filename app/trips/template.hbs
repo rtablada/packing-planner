@@ -1,22 +1,22 @@
 <div class="columns is-multiline">
   {{#each (sort-by "order" model) as |trip|}}
     <div class="column is-3 is-grow">
-      <div class="panel">
+      {{#draggable-object-target class="panel" action=(action "changeTrip" trip)}}
         <h2 class="panel-heading">{{trip.title}}</h2>
 
         {{#each trip.items as |item|}}
-          <a href="#" class="panel-block">
+          {{#draggable-object content=item class="panel-block"}}
             <span class="level is-mobile">
               <span class="level-left">{{item.name}}</span>
               <span class="level-right is-light">{{item.room.name}}</span>
             </span>
-          </a>
+          {{/draggable-object}}
         {{/each}}
 
         {{#link-to "trips.new-item" trip.id class="panel-block"}}
           Add Item To List
          {{/link-to}}
-      </div>
+      {{/draggable-object-target}}
     </div>
 
   {{/each}}
