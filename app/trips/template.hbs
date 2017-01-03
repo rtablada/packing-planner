@@ -1,13 +1,11 @@
 <div class="columns is-multiline">
   {{#each (sort-by "order" model) as |trip|}}
     <div class="column is-3 is-grow">
-      <div class="card is-fullwidth">
-        {{#link-to "trips.index"}}
-          <div class="card-header">
-            <h2 class="card-header-title title">{{trip.title}}</h2>
-          </div>
-          <div class="card-content"></div>
-        {{/link-to}}
+      <div class="panel">
+        <h2 class="panel-heading">{{trip.title}}</h2>
+        {{#link-to "trips.new-item" trip class="panel-block"}}
+          Add Item To List
+         {{/link-to}}
       </div>
     </div>
 

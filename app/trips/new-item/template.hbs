@@ -1,0 +1,44 @@
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    {{#simple-form onsubmit=(action "saveItem" model) class="card is-fullwidth" as |formInputs|}}
+      <header class="card-header">
+        <h2 class="card-header-title subtitle">
+          New Item for Trip: {{model.title}}
+        </h2>
+      </header>
+      <div class="card-content">
+        <div class="form-input">
+          <label for="item-name" class="label">Item Name</label>
+
+          <p class="control">
+            {{input id="item-name" class="input" placeholder="Item Name" value=formInputs.name}}
+          </p>
+        </div>
+
+        <div class="form-input">
+          <label for="item-room-name" class="label">Room Name</label>
+
+          <p class="control">
+            {{input id="item-room-name" class="input" placeholder="Room Name" value=formInputs.room}}
+          </p>
+        </div>
+
+        <div class="form-input">
+          <p class="control">
+            <label for="item-own-box" class="checkbox label">
+              Has Own Box?
+              {{bulma-checkbox id="item-own-box" onchange=(action (toggle 'ownBox' formInputs))}}
+            </label>
+          </p>
+        </div>
+      </div>
+
+      <footer class="card-footer">
+        {{#link-to "trips" class="card-footer-item"}}Back{{/link-to}}
+        <button class="card-footer-item button is-primary">Save</button>
+      </footer>
+    {{/simple-form}}
+  </div>
+  {{#link-to "trips" class="modal-close"}}{{/link-to}}
+</div>
