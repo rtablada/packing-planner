@@ -1,5 +1,5 @@
 <div class="modal is-active">
-  <div class="modal-background"></div>
+  {{#link-to "trips" class="modal-background"}}{{/link-to}}
   <div class="modal-content">
     {{#simple-form onsubmit=(action "saveItem" model) class="card is-fullwidth" as |formInputs|}}
       <header class="card-header">
