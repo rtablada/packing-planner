@@ -3,14 +3,10 @@
     <div class="column is-3 is-grow">
       <div class="card is-fullwidth">
         {{#link-to "trips.index"}}
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="http://placehold.it/300x225?text={{trip.title}}" alt="">
-            </figure>
+          <div class="card-header">
+            <h2 class="card-header-title title">{{trip.title}}</h2>
           </div>
-          <div class="card-content">
-            <h2 class="title">{{trip.title}}</h2>
-          </div>
+          <div class="card-content"></div>
         {{/link-to}}
       </div>
     </div>
@@ -20,14 +16,9 @@
   <div class="column is-3 is-grow">
     <div class="card is-fullwidth">
       {{#link-to "trips.new"}}
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img src="http://placehold.it/300x225?text=%2B" alt="">
-          </figure>
-        </div>
-        <div class="card-content">
-          <h2 class="title">Add New Trip</h2>
-        </div>
+      <div class="card-header">
+        <h2 class="card-header-title title has-text-centered is-block">Add New Trip +</h2>
+      </div>
       {{/link-to}}
     </div>
   </div>

@@ -1,33 +1,29 @@
 <div class="app">
   <section class="hero is-primary">
     <div class="hero-head">
-      <div class="container">
-        <nav class="nav">
-          <div class="nav-left">
-            {{#link-to "trips.index" class="nav-item is-brand"}}
-              <h1 class="title">Packing Planner</h1>
-            {{/link-to}}
-          </div>
+      <nav class="nav">
+        <div class="nav-left">
+          {{#link-to "trips.index" class="nav-item is-brand" }}
+            <h1 class="title">Packing Planner</h1>
+          {{/link-to}}
+        </div>
 
-          <div class="nav-center"></div>
+        <div class="nav-center"></div>
 
-          <span class="nav-toggle">
+        <span class="nav-toggle">
             <span></span>
-            <span></span>
-            <span></span>
-          </span>
+        <span></span>
+        <span></span>
+        </span>
 
-          <div class="nav-right nav-menu">
-            {{#link-to "trips.index" class="nav-item"}}Home{{/link-to}}
-          </div>
-        </nav>
-      </div>
+        <div class="nav-right nav-menu">
+          {{#link-to "trips.index" class="nav-item" }}Home{{/link-to}}
+        </div>
+      </nav>
     </div>
   </section>
 
   <section class="section app-content">
-    <div class="container">
-      {{outlet}}
-    </div>
+    {{outlet}}
   </section>
 </div>
