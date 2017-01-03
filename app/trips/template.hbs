@@ -3,6 +3,16 @@
     <div class="column is-3 is-grow">
       <div class="panel">
         <h2 class="panel-heading">{{trip.title}}</h2>
+
+        {{#each trip.items as |item|}}
+          <a href="#" class="panel-block">
+            <span class="level is-mobile">
+              <span class="level-left">{{item.name}}</span>
+              <span class="level-right is-light">{{item.room}}</span>
+            </span>
+          </a>
+        {{/each}}
+
         {{#link-to "trips.new-item" trip class="panel-block"}}
           Add Item To List
          {{/link-to}}
