@@ -1,38 +1,44 @@
-{{#simple-form onsubmit=(action "saveTrip") class="card is-fullwidth" as |formInputs|}}
-  <header class="card-header">
-    <h2 class="card-header-title subtitle">
-      New Trip
-    </h2>
-  </header>
-  <div class="card-content">
-    <div class="form-input">
-      <label for="trip-title" class="label">Title</label>
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    {{#simple-form onsubmit=(action "saveTrip") class="card is-fullwidth" as |formInputs|}}
+      <header class="card-header">
+        <h2 class="card-header-title subtitle">
+          New Trip
+        </h2>
+      </header>
+      <div class="card-content">
+        <div class="form-input">
+          <label for="trip-title" class="label">Title</label>
 
-      <p class="control">
-        {{input id="trip-title" class="input" placeholder="Title" value=formInputs.title}}
-      </p>
-    </div>
+          <p class="control">
+            {{input id="trip-title" class="input" placeholder="Title" value=formInputs.title}}
+          </p>
+        </div>
 
-    <div class="form-input">
-      <label for="trip-complete-date" class="label">Complete Date</label>
+        <div class="form-input">
+          <label for="trip-complete-date" class="label">Complete Date</label>
 
-      <p class="control">
-        {{input id="trip-complete-date" class="input" placeholder="Complete Date" value=formInputs.completeDate type="date"}}
-      </p>
-    </div>
+          <p class="control">
+            {{input id="trip-complete-date" class="input" placeholder="Complete Date" value=formInputs.completeDate type="date"}}
+          </p>
+        </div>
 
-    <div class="form-input">
-      <p class="control">
-        <label for="trip-complete-date" class="checkbox label">
-          Help?
-          {{bulma-checkbox onchange=(action (toggle 'help' formInputs))}}
-        </label>
-      </p>
-    </div>
+        <div class="form-input">
+          <p class="control">
+            <label for="trip-complete-date" class="checkbox label">
+              Help?
+              {{bulma-checkbox onchange=(action (toggle 'help' formInputs))}}
+            </label>
+          </p>
+        </div>
+      </div>
+
+      <footer class="card-footer">
+        {{#link-to "trips" class="card-footer-item"}}Back{{/link-to}}
+        <button class="card-footer-item button is-primary">Save</button>
+      </footer>
+    {{/simple-form}}
   </div>
-
-  <footer class="card-footer">
-    {{#link-to "trips.index" class="card-footer-item"}}Back{{/link-to}}
-    <button class="card-footer-item button is-primary">Save</button>
-  </footer>
-{{/simple-form}}
+  {{#link-to "trips" class="modal-close"}}{{/link-to}}
+</div>
