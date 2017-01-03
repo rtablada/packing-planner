@@ -1,0 +1,11 @@
+<div class="control autocomplete">
+  {{input class="input" input=(action "lookupRooms") value=name placeholder=placeholder}}
+
+  {{#if suggestions.length}}
+    <div class="panel autocomplete-panel">
+      {{#each suggestions as |room|}}
+        <a href="#" class="panel-block" {{action "selectRoom" room}}>{{room.name}}</a>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>

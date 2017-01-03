@@ -36,3 +36,17 @@
 .is-light {
   color: $grey-dark;
 }
+
+.autocomplete {
+  position: relative;
+
+  &-panel {
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+
+    width: 100%;
+
+    background: $white;
+  }
+}

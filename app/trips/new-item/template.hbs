@@ -19,9 +19,7 @@
         <div class="form-input">
           <label for="item-room-name" class="label">Room Name</label>
 
-          <p class="control">
-          {{input id="item-room-name" class="input" placeholder="Room Name" value=formInputs.roomName}}
-          </p>
+          {{room-select rooms=rooms onchange=(action (mut formInputs.roomName)) placeholder="Room Name"}}
         </div>
 
         <div class="form-input">
